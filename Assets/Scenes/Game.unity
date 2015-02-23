@@ -207,6 +207,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 410936882}
   - 135: {fileID: 410936883}
+  - 114: {fileID: 410936884}
   m_Layer: 0
   m_Name: Slingshot
   m_TagString: Untagged
@@ -242,6 +243,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3
   m_Center: {x: 0, y: 4, z: 0}
+--- !u!114 &410936884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 410936881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178e1a4f5d94c48ce8285505139d7552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &457664160
 GameObject:
   m_ObjectHideFlags: 0

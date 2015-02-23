@@ -3,15 +3,21 @@ using System.Collections;
 
 public class Slingshot : MonoBehaviour {
 
+	private GameObject launchPoint;
+
+	void Awake(){
+		//print ("Awake()");
+		launchPoint = GameObject.Find("LaunchPoint");
+		launchPoint.SetActive(false);
+	}
+
 	void OnMouseEnter() {
-		print ("Enter");
+		//print ("Enter");
+		launchPoint.SetActive(true);
 	}
 	
 	void OnMouseExit() {
-		print ("Exit");
-	}
-	
-	void OnMouseDown(){
-		print ("Down");	
+		//print ("Exit");
+		launchPoint.SetActive(false);
 	}
 }

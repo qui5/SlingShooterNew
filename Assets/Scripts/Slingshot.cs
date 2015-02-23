@@ -75,6 +75,10 @@ public class Slingshot : MonoBehaviour {
 			// Fire off the projectile with given velocity
 			projectile.rigidbody.isKinematic = false;
 			projectile.rigidbody.velocity = -mouseDelta * velocityMult;
+
+			// Set the Followcam's target to our projectile
+			FollowCam.S.poi = projectile;
+
 			// Set the reference to the projectile to null as early as possible
 			projectile = null;
 		}

@@ -65,11 +65,8 @@ public class CloudCrafter : MonoBehaviour {
 			if(cPos.x < cloudPosMin.x){
 				cPos.x = cloudPosMax.x;
 			}
-
+			// Apply the new position to the cloud
 			cloud.transform.position = cPos;
-
-
-
 		}
 	
 	}

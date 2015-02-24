@@ -20,11 +20,26 @@ public class FollowCam : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		// If the point of interest is empty, do nothing
-		if(poi == null) return;
 
-		// Get the poi's position
-		Vector3 destination = poi.transform.position;
+		Vector3 destination;
+
+		// If the point of interest is empty, set it to (0,0,0)
+		if(poi == null) {
+			destination = Vector3.zero;
+		} else {
+			// Otherwise, get the poi's position
+			destination = poi.transform.position;
+
+			// If the poi is the projectile check if it is resting
+			if (poi.tag == "Projectile"){
+				// If its not moving
+				if(poi.rigidbody.IsSleeping()) {
+					// Return to default view in next Update()
+					poi = null;
+					return;
+				}
+			}
+		}
 
 		// Limit the X and Y to minimum values
 		destination.x = Mathf.Max (minXY.x, destination.x);

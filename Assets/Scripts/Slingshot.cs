@@ -61,10 +61,7 @@ public class Slingshot : MonoBehaviour {
 
 		// Limit mouseDelta to the radius of the Slingshot SphereCollider
 		float maxMagnitude = GetComponent<SphereCollider>().radius;
-		if(mouseDelta.magnitude > maxMagnitude){
-			mouseDelta.Normalize();
-			mouseDelta *= maxMagnitude;
-		}
+		mouseDelta = Vector3.ClampMagnitude(mouseDelta, maxMagnitude);
 
 		// Now move the projectile to this new position
 		projectile.transform.position = launchPos + mouseDelta;

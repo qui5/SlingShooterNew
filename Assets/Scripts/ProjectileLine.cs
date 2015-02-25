@@ -92,4 +92,11 @@ public class ProjectileLine : MonoBehaviour {
 
 		lastPoint = pt;
 	}
+
+	public void Clear(){
+		_poi = null;
+		line.enabled = false;
+		pointsCount = 0;
+		line.SetVertexCount(0);
+	}
 }

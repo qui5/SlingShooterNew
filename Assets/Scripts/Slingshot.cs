@@ -78,6 +78,8 @@ public class Slingshot : MonoBehaviour {
 
 			// Set the reference to the projectile to null as early as possible
 			projectile = null;
+
+			GameController.ShotFired();
 		}
 		
 	}

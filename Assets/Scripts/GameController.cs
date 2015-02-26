@@ -71,13 +71,15 @@ public class GameController : MonoBehaviour {
 		UpdateGT();
 
 		// Check for level end
-		if(state == GameState.playing && Goal.goalMet){
-			// Change state to stop checking for level end
-			state = GameState.levelEnd;
-			// Zoom out
-			SwitchView("Both");
-			// Start next level in 2 seconds
-			Invoke("NextLevel", 2f);
+		if(state == GameState.playing && Goal.goalMet) {
+			if(FollowCam.S.poi.tag == "Projectile" &&  FollowCam.S.poi.rigidbody.IsSleeping()) {
+				// Change state to stop checking for level end
+				state = GameState.levelEnd;
+				// Zoom out
+				SwitchView("Both");
+				// Start next level in 2 seconds
+				Invoke("NextLevel", 2f);
+			}
 		}
 	}
 

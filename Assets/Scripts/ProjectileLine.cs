@@ -78,10 +78,10 @@ public class ProjectileLine : MonoBehaviour {
 
 		if(pointsCount == 0){
 			// If its the launch point (first)
-			line.SetVertexCount(2);
+			line.SetVertexCount(1);
 			line.SetPosition(0, pt);
-			line.SetPosition(1, pt);
-			pointsCount += 2;
+			//line.SetPosition(1, pt);
+			pointsCount += 1;
 			line.enabled = true;
 		} else {
 			// Not the first point

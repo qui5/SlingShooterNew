@@ -63,7 +63,7 @@ public class ProjectileLine : MonoBehaviour {
 		// Now poi definitely has a value and its a projectile
 		// So add a point in every FixedUpdate()
 		AddPoint();
-		if(poi.rigidbody.IsSleeping()){
+		if(poi.GetComponent<Rigidbody>().IsSleeping()){
 			// The poi is resting, so clear it
 			poi = null;
 		}

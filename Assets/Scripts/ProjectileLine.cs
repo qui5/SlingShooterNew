@@ -21,7 +21,7 @@ public class ProjectileLine : MonoBehaviour {
 		S = this; // Set the singleton instnce
 		// Get a reference to the LineRenderer
 		line = GetComponent<LineRenderer>();
-		line.material = new Material(Shader.Find("Particles/Additive"));
+		//line.material = new Material(Shader.Find("Mobile/Particles/Additive"));
 		Color c1 = Color.yellow;
 		Color c2 = Color.red;
 		line.SetColors(c1,c2);

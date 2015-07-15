@@ -82,7 +82,13 @@ public class Slingshot : MonoBehaviour {
 			projectile = null;
 
 			GameController.ShotFired();
-		}
 		
+		}
+	}
+
+	void OnCollisionEnter(Collision collision){
+		if(collision.gameObject.tag == "Projectile"){
+			Destroy(collision.gameObject);
+		}
 	}
 }

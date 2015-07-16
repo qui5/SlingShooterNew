@@ -2,16 +2,11 @@
 using System.Collections;
 
 public class Projectile : MonoBehaviour {
+	
+	public GameObject splashParticle;
 
-	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.name == "Wall_Stone") {
-			Destroy (this.gameObject);
-		}
+	void OnTriggerEnter(Collider other){
+		Instantiate (splashParticle, this.gameObject.transform.position, this.gameObject.transform.rotation);
 	}
 
-	/*void Explode() {
-		var exp = GetComponent<ParticleSystem>();
-		exp.Play();
-		Destroy(gameObject, exp.duration);
-	}*/
 }

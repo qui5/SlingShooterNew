@@ -7,6 +7,7 @@ public class Goal : MonoBehaviour {
 	public static bool goalMet = false;
 	public AudioClip GoalSound;
 	public float goalVol = 1f;
+	public GameObject splashParticle;
 
 	private AudioSource source;
 
@@ -19,8 +20,10 @@ public class Goal : MonoBehaviour {
 			c.a = 1.0f;
 			GetComponent<Renderer>().material.color = c;
 
+			Instantiate (splashParticle, this.gameObject.transform.position, this.gameObject.transform.rotation);
 			source = GetComponent<AudioSource>();
 			source.PlayOneShot(GoalSound,goalVol);
 		}
 	}
+	
 }

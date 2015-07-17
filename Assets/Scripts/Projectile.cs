@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Projectile : MonoBehaviour {
@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour {
 	public AudioClip HitSound;
 	public AudioClip SplashSound;
 	public float projectileVol = 1f;
+	public int maxHitNum = 3;
 	
 	private AudioSource source;
 	private int hitNum = 0;
@@ -20,7 +21,7 @@ public class Projectile : MonoBehaviour {
 	}
 
 	void checkHit(){
-		if (hitNum == 3) {
+		if (hitNum == maxHitNum) {
 			Instantiate (splashParticle, this.gameObject.transform.position, this.gameObject.transform.rotation);
 			source.PlayOneShot(SplashSound,projectileVol);
 			StartCoroutine("waitAndDestroy");

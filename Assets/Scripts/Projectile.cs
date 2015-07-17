@@ -4,9 +4,15 @@ using System.Collections;
 public class Projectile : MonoBehaviour {
 	
 	public GameObject splashParticle;
+	public AudioClip HitSound;
+	public float hitVol = 1f;
+	
+	private AudioSource source;
 
-	void OnTriggerEnter(Collider other){
+	void OnCollisionEnter(){
 		Instantiate (splashParticle, this.gameObject.transform.position, this.gameObject.transform.rotation);
+		source = GetComponent<AudioSource>();
+		source.PlayOneShot(HitSound,hitVol);
 	}
 
 }

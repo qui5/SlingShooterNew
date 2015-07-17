@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Slingshot : MonoBehaviour {
@@ -6,12 +6,15 @@ public class Slingshot : MonoBehaviour {
 	// Fields set in the Unity Inspector pane
 	public GameObject prefabProjectile;
 	public float velocityMult = 4f;
+	public AudioClip SlingSound;
+	public float slingVol = 1f;
 	
 	// Fields set dynamically
 	private GameObject launchPoint;
 	private Vector3 launchPos;
 	private GameObject projectile;
 	private bool aimingMode;
+	private AudioSource source;
 	
 	void Awake(){
 		//print ("Awake()");
@@ -19,6 +22,8 @@ public class Slingshot : MonoBehaviour {
 		launchPoint = launchPointTrans.gameObject;
 		launchPoint.SetActive(false);
 		launchPos = launchPointTrans.position;
+
+		source = GetComponent<AudioSource>();
 	}
 	
 	void OnMouseEnter() {
@@ -80,6 +85,9 @@ public class Slingshot : MonoBehaviour {
 
 			// Set the reference to the projectile to null as early as possible
 			projectile = null;
+
+			// Play sound
+			source.PlayOneShot(SlingSound,slingVol);
 
 			GameController.ShotFired();
 		

@@ -5,6 +5,10 @@ public class Goal : MonoBehaviour {
 
 	// A static field visible from anywhere
 	public static bool goalMet = false;
+	public AudioClip GoalSound;
+	public float goalVol = 1f;
+
+	private AudioSource source;
 
 	void OnTriggerEnter(Collider other) {
 		// Check if the hit comes from a projectile
@@ -14,6 +18,9 @@ public class Goal : MonoBehaviour {
 			Color c = GetComponent<Renderer>().material.color;
 			c.a = 1.0f;
 			GetComponent<Renderer>().material.color = c;
+
+			source = GetComponent<AudioSource>();
+			source.PlayOneShot(GoalSound,goalVol);
 		}
 	}
 }

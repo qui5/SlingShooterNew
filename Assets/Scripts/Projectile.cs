@@ -12,7 +12,6 @@ public class Projectile : MonoBehaviour {
 	private int hitNum = 0;
 
 	void OnCollisionEnter(){
-		Instantiate (splashParticle, this.gameObject.transform.position, this.gameObject.transform.rotation);
 		source = GetComponent<AudioSource>();
 		source.PlayOneShot(HitSound,projectileVol);
 
@@ -22,6 +21,7 @@ public class Projectile : MonoBehaviour {
 
 	void checkHit(){
 		if (hitNum == 3) {
+			Instantiate (splashParticle, this.gameObject.transform.position, this.gameObject.transform.rotation);
 			source.PlayOneShot(SplashSound,projectileVol);
 			StartCoroutine("waitAndDestroy");
 		}

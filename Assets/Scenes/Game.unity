@@ -3120,9 +3120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castles:
-  - {fileID: 180576, guid: 258c0cab4555d2d4cabc3ccfe6ad77fd, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 134254, guid: 258c0cab4555d2d4cabc3ccfe6ad77fd, type: 2}
+  - {fileID: 119490, guid: 5bdca6ff16956a74292db7f87b48c1bb, type: 2}
+  - {fileID: 171914, guid: a47a7a78d7508f7429ef23ca556d23f0, type: 2}
+  - {fileID: 156886, guid: abf981b9b53f3d2469e76676b63d70b5, type: 2}
   gtLevel: {fileID: 1664124686}
   gtScore: {fileID: 2041803210}
   castlePos: {x: 50, y: -9.5, z: 0}

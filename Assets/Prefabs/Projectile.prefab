@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   splashParticle: {fileID: 179012, guid: 6d48670c03a8a8a44b69a54287b890c0, type: 2}
   HitSound: {fileID: 8300000, guid: ee163101d908a44408d257e0079edb30, type: 3}
-  hitVol: 2
+  hitVol: 1
 --- !u!135 &13569702
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -271,7 +271,7 @@ Prefab:
       objectReference: {fileID: 8300000, guid: ee163101d908a44408d257e0079edb30, type: 3}
     - target: {fileID: 0}
       propertyPath: hitVol
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_audioClip

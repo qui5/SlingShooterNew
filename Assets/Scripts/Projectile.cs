@@ -13,6 +13,11 @@ public class Projectile : MonoBehaviour {
 	private int hitNum = 0;
 
 	void OnCollisionEnter(){
+
+		if (Goal.goalMet == true) {
+			StartCoroutine("waitAndDestroy");
+		}
+
 		source = GetComponent<AudioSource>();
 		source.PlayOneShot(HitSound,projectileVol);
 

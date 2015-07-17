@@ -3022,14 +3022,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb533d375ecb4ac9a52198c35bb5ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numClouds: 40
+  numClouds: 20
   cloudPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  cloudPosMin: {x: -50, y: 30, z: 10}
+  - {fileID: 128574, guid: 22e483e66b127d346847599bb6d37365, type: 2}
+  - {fileID: 155750, guid: ee0f1498aaa3f454487b0c1db815ec94, type: 2}
+  - {fileID: 102834, guid: 701f9f0d7507200438a8471ec71e11fb, type: 2}
+  - {fileID: 141036, guid: 55f0b0a38d89f7248a6a564815d1a3c2, type: 2}
+  cloudPosMin: {x: -50, y: 20, z: 10}
   cloudPosMax: {x: 150, y: 100, z: 10}
   cloudScaleMin: 1
   cloudScaleMax: 5
